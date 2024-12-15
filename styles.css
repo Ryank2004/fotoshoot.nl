@@ -1,0 +1,441 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins/Poppins-Black.tff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "BeVietnamProExtraBold";
+    src: url("/fonts/Be_Vietnam_Pro/BeVietnamPro-ExtraBold.ttf");
+}
+
+:root {
+    --textColor: #414141;
+    --backgroundColor: #FFF6E9;
+    --secundairyColor: #181C14;
+    --titleColor:#FF6D28;
+    --containerColor: #ECDFCC;
+    --titleFont: "BeVietnamProExtraBold", sans-serif;
+    --textFont: "Poppins", sans-serif;
+}
+body {
+    font-family: var(--textFont);
+    margin: 0;
+    color: white;
+    background-color: var(--secundairyColor);
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--titleFont);
+}
+
+p {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.nav_bar_container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav_bar {
+    display: flex;
+    position: fixed;
+    height: 75px;
+    border-radius: 10px;
+    width: 90%;
+    background-color: var(--containerColor);
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto;
+    transition: all 300ms cubic-bezier(.10,.0,.80,.0);
+}
+
+.nav_bar.active {
+    
+    background-color: var(--secundairyColor);
+    height: 320px;
+}
+
+.nav_items {
+    display: flex;
+    min-height: 75px;
+    align-items: center;
+    padding-top: 5px;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.title {
+    font-family: var(--titleFont);
+    text-transform: uppercase;
+    color: var(--titleColor);
+    font-size: 25px;
+    line-height: 14px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.title span {
+    font-size: 15.5px;
+    padding-left: 0.5px;
+}
+
+.hamburger {
+    height: 32px;
+    width: 40px;
+    cursor: pointer;
+    scale: .8;
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+    background: var(--titleColor);
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;         
+    margin-top: 13px;
+}
+
+.hamburger span::before {
+    margin-top:-12px;
+    
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.hamburger span::after {
+    margin-top:12px;
+    
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.hamburger.active span {
+    background: transparent;
+    
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+
+    -webkit-transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+    transform:rotate(-90deg);
+}
+
+.hamburger.active span::before {
+    margin-top:0;
+    
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+
+    -webkit-transition-delay: .5s;
+    -moz-transition-delay: .5s;
+    -o-transition-delay: .5s;
+    transition-delay: .5s;
+}
+
+.hamburger.active span::after {
+    margin-top:0;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+    -webkit-transition-delay: .6s;
+    -moz-transition-delay: .6s;
+    -o-transition-delay: .6s;
+    transition-delay: .5s;
+}
+
+.menu {
+    opacity: 0;
+    transition: opacity 300ms; /* Standaard zonder vertraging */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.menu.show {
+    opacity: 1;
+    transition: opacity 300ms 300ms; /* Met vertraging alleen bij openen */
+}
+
+.menu_item {
+    margin: 12px 0;
+}
+
+.menu_item a {
+    font-family: var(--titleFont);
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--backgroundColor);
+    text-transform: uppercase;
+    padding-bottom: 2px;
+}
+
+.menu_item a.active_page {
+    color: var(--titleColor);
+    border-bottom: 1.5px solid var(--titleColor);
+}
+
+.hero_section {
+    width: 100%;
+    height: 85vh;
+    padding-top: 100px;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero_title {
+    font-family: "BeVietnamProExtraBold", sans-serif;
+    padding: 0 24px;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 42px;
+    color: var(--titleColor);
+    line-height: .95;
+    margin: 0 auto;
+}
+
+.hero_text {
+    padding: 80px 34px 0 34px;
+    color: var(--textColor);
+    font-weight: 400;
+}
+
+.line_wrapper_title {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    height: 45px; /* Pas de hoogte aan op basis van je design */
+}
+
+.line_wrapper_text {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    height: 34px; /* Pas de hoogte aan op basis van je design */
+}
+
+.line {
+    display: inline-block;
+    transform: translateY(115px);
+    transition: transform 0.5s ease-out;
+}
+
+.slider {
+    width: 100%;
+    max-width: 1536px;
+    position: relative;
+    background-color: var(--backgroundColor);
+    height: 70px;
+    overflow: hidden;
+    padding: 20px;
+    border: none;
+}
+
+@keyframes scrollLeft {
+    to {
+      left: -200px;
+    }
+  }
+
+.item {
+    font-family: var(--titleFont);
+    width: 200px;
+    height: 70px;
+    color: var(--titleColor);
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(200px * 5), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.item i {
+    padding-left: 10px;
+    position: relative;
+    bottom: -3px;
+}
+
+.item:nth-child(1){
+    animation-delay: calc(30s / 5 * (5 - 1) * -1);
+}
+
+.item:nth-child(2){
+    animation-delay: calc(30s / 5 * (5 - 2) * -1);
+}
+
+.item:nth-child(3){
+    animation-delay: calc(30s / 5 * (5 - 3) * -1);
+}
+
+.item:nth-child(4){
+    animation-delay: calc(30s / 5 * (5 - 4) * -1);
+}
+
+.item:nth-child(5){
+    animation-delay: calc(30s / 5 * (5 - 5) * -1);
+}
+
+.info_container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    position: relative;
+    left: -600px;
+}
+
+.info_container:nth-of-type(3) {
+    background: var(--secundairyColor);
+    color: var(--backgroundColor);
+}
+
+.info_container h1 {
+    font-family: "BeVietnamProExtraBold", sans-serif;
+    /* padding: 24px 0; */
+    /* margin-top: 10px; */
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 42px;
+    color: var(--backgroundColor);
+    line-height: .95;
+    padding: 20px 20px 0px 20px;
+}
+
+.info_container p {
+    padding: 0 0 26px 0;
+    color: var(--backgroundColor);
+    padding: 20px 20px;
+    margin-bottom: 20px;
+}
+
+.info_img {
+    width: 100%;
+    height: auto;
+    padding: 20px 20px;
+}
+
+.info_container a {
+    display: inline-flex;
+    text-decoration: none;
+    background-color: var(--titleColor);
+    font-size: 24px;
+    color: var(--secundairyColor);
+    font-weight: 600;
+    border-bottom: 2px solid var(--titleColor);
+    border-top: 2px solid var(--titleColor);
+    align-items: center;
+    padding: 20px 20px;
+    transition: background-color 0.3s ease; /* Optioneel: visuele feedback op hover */
+}
+
+.info_container a i {
+    font-size: 24px;
+    margin-left: auto;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease; /* Zorgt voor een vloeiende overgang */
+}
+
+.info_container a:hover i {
+    transform: rotate(0deg); /* Reset de rotatie bij hover op de gehele button */
+}
+
+
+
+.subpage_title {
+    position: absolute;
+    top: 60%;
+    text-align: center;
+}
+
+
+
+.call_button .ripple {
+	z-index: 99999;
+	position: fixed;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	background: var(--secundairyColor);
+	width: 4rem;
+	height: 4rem;
+	padding: 1rem;
+	border-radius: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #ffffff;
+	-webkit-animation: ripple 0.6s linear infinite;
+	animation: ripple 0.6s linear infinite;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-items: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-decoration: none; }
+	.call_button .ripple i {
+	  -webkit-transition: 0.3s ease;
+	  transition: 0.3s ease;
+	  font-size: 1.7rem; }
+	.call_button .ripple:hover i {
+	  -webkit-transform: rotate(135deg);
+	  transform: rotate(135deg); }
+  
+  @-webkit-keyframes ripple {
+	0% {
+	  -webkit-box-shadow: 0 4px 10px rgba(236, 139, 0, 0.2), 0 0 0 0 rgba(236, 139, 0, 0.2), 0 0 0 5px rgba(236, 139, 0, 0.2), 0 0 0 10px rgba(236, 139, 0, 0.2);
+	  box-shadow: 0 4px 10px rgba(236, 139, 0, 0.2), 0 0 0 0 rgba(236, 139, 0, 0.2), 0 0 0 5px rgba(236, 139, 0, 0.2), 0 0 0 10px rgba(236, 139, 0, 0.2); }
+	100% {
+	  -webkit-box-shadow: 0 4px 10px rgba(236, 139, 0, 0.2), 0 0 0 5px rgba(236, 139, 0, 0.2), 0 0 0 10px rgba(236, 139, 0, 0.2), 0 0 0 20px rgba(236, 139, 0, 0);
+	  box-shadow: 0 4px 10px rgba(236, 139, 0, 0.2), 0 0 0 5px rgba(236, 139, 0, 0.2), 0 0 0 10px rgba(236, 139, 0, 0.2), 0 0 0 20px rgba(236, 139, 0, 0); } }
+  
+  @keyframes ripple {
+	0% {
+	  -webkit-box-shadow: 0 4px 10px rgba(236, 139, 0, 0.2), 0 0 0 0 rgba(236, 139, 0, 0.2), 0 0 0 5px rgba(236, 139, 0, 0.2), 0 0 0 10px rgba(236, 139, 0, 0.2);
+	  box-shadow: 0 4px 10px rgba(236, 139, 0, 0.2), 0 0 0 0 rgba(236, 139, 0, 0.2), 0 0 0 5px rgba(236, 139, 0, 0.2), 0 0 0 10px rgba(236, 139, 0, 0.2); }
+	100% {
+	  -webkit-box-shadow: 0 4px 10px rgba(236, 139, 0, 0.2), 0 0 0 5px rgba(236, 139, 0, 0.2), 0 0 0 10px rgba(236, 139, 0, 0.2), 0 0 0 20px rgba(236, 139, 0, 0);
+	  box-shadow: 0 4px 10px rgba(236, 139, 0, 0.2), 0 0 0 5px rgba(236, 139, 0, 0.2), 0 0 0 10px rgba(236, 139, 0, 0.2), 0 0 0 20px rgba(236, 139, 0, 0); } }
+
+/* span.call_button_text{
+    font-weight: 600;
+	position: absolute;
+    color: #ec8b00;
+    right: -35%;
+    bottom: -80%;
+    width: 100px;
+	} */
