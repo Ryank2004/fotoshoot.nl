@@ -186,7 +186,7 @@ p {
 
 .menu_item {
     margin: 12px 0;
-    /* font-weight: 500; */
+    font-weight: 700;
 }
 
 .menu_item a {
@@ -282,6 +282,7 @@ p {
     color: var(--titleColor);
     text-transform: uppercase;
     font-size: 20px;
+    font-weight: 700;
     border-radius: 6px;
     position: absolute;
     bottom: max(calc(40px * 8), 100%);
