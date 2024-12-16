@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 start: 'top center',
                 end: '50% center',
                 scrub: true,
-                markers: true,
+                // markers: true,
             }
         });
     });
