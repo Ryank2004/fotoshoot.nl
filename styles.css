@@ -6,7 +6,7 @@
   
 @font-face {
     font-family: "Poppins";
-    src: url("/fonts/Poppins/Poppins-Black.tff");
+    src: url("/fonts/Poppins/Poppins-Medium.ttf");
     font-weight: 400;
 }
 
@@ -24,10 +24,6 @@
     --containerColor: #ECDFCC;
     --titleFont: "BeVietnamProExtraBold", sans-serif;
     --textFont: "Poppins", sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -416,6 +412,7 @@ p {
     position: relative;
     left: -600px;
     color: var(--backgroundColor);
+    will-change: transform;
 }
 
 .info_container:nth-of-type(3) {

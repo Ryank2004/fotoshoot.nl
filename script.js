@@ -11,6 +11,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
+
+    // Initialize a new Lenis instance for smooth scrolling
+    const lenis = new Lenis();
+
+    // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+    lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+    });
+
+    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+    gsap.ticker.lagSmoothing(0);
+
     // Scroll-trigger animaties voor containers
     const containers = gsap.utils.toArray('.info_container');
     containers.forEach(container => {
@@ -58,25 +74,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     );
 });
-
-
-ScrollTrigger.normalizeScroll(true); // enable
-
-// Initialize Lenis
-  const lenis = new Lenis({
-    autoRaf: true,
-  });
-  
-  // Listen for the scroll event and log the event data
-  lenis.on('scroll', (e) => {
-    console.log(e);
-  });
-
-// Use requestAnimationFrame to continuously update the scroll
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
