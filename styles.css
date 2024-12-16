@@ -251,7 +251,100 @@ p {
     transition: transform 0.5s ease-out;
 }
 
-.slider {
+.scroll_slider_container {
+    background-color: var(--backgroundColor);
+    padding-bottom: 40px;
+}
+
+.scroll_slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--backgroundColor);
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+    /* opacity: 0; */
+    animation: fadeIn 2s ease-in-out forwards;
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0), /* Transparant */
+        rgba(0, 0, 0, 1) 20%, /* Opaque begint */
+        rgba(0, 0, 0, 1) 80%, /* Opaque blijft */
+        rgba(0, 0, 0, 0) /* Transparant */
+    );
+}
+
+.scroll_item {
+    font-family: var(--titleFont);
+    color: var(--titleColor);
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: max(calc(40px * 8), 100%);
+    animation: scrollBottom 15s linear infinite;
+}
+
+.scroll_item i {
+    font-size: 24px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scrollBottom {
+    to {
+      bottom: -40px;
+    }
+  }
+
+.scroll_item:nth-child(1){
+    animation-delay: calc(15s / 8 * (8 - 1) * -1);
+}
+
+.scroll_item:nth-child(2){
+    animation-delay: calc(15s / 8 * (8 - 2) * -1);
+}
+
+.scroll_item:nth-child(3){
+    animation-delay: calc(15s / 8 * (8 - 3) * -1);
+}
+
+.scroll_item:nth-child(4){
+    animation-delay: calc(15s / 8 * (8 - 4) * -1);
+}
+
+.scroll_item:nth-child(5){
+    animation-delay: calc(15s / 8 * (8 - 5) * -1);
+}
+
+.scroll_item:nth-child(6){
+    animation-delay: calc(15s / 8 * (8 - 6) * -1);
+}
+
+.scroll_item:nth-child(7){
+    animation-delay: calc(15s / 8 * (8 - 7) * -1);
+}
+
+.scroll_item:nth-child(8){
+    animation-delay: calc(15s / 8 * (8 - 8) * -1);
+}
+
+/* .slider {
     width: 100%;
     max-width: 1536px;
     position: relative;
@@ -308,7 +401,7 @@ p {
 
 .item:nth-child(5){
     animation-delay: calc(20s / 5 * (5 - 5) * -1);
-}
+} */
 
 .info_container {
     display: flex;
