@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             x: 600,
             scrollTrigger: {
                 trigger: container,
-                start: 'top center',
+                start: '-30% center',
                 end: '50% center',
-                scrub: true,
-                // markers: true,
+                scrub: 0.8,
+                markers: true,
             }
         });
     });
