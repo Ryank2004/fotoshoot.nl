@@ -8,6 +8,7 @@
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
+    
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
     // Scroll-trigger animaties voor containers
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 
-
+ScrollTrigger.normalizeScroll(true); // enable
 
 // Initialize Lenis
   const lenis = new Lenis({
@@ -78,3 +79,4 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
