@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 start: '-30% center',
                 end: '50% center',
                 scrub: 0.8,
-                markers: true,
+                // markers: true,
             }
         });
     });
