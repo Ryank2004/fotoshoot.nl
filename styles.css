@@ -25,6 +25,11 @@
     --titleFont: "BeVietnamProExtraBold", sans-serif;
     --textFont: "Poppins", sans-serif;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--textFont);
     margin: 0;
