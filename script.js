@@ -17,9 +17,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             x: 600,
             scrollTrigger: {
                 trigger: container,
-                start: 'top 100%',
-                end: '80% 100%',
+                start: 'top center',
+                end: '50% center',
                 scrub: true,
+                markers: true,
             }
         });
     });

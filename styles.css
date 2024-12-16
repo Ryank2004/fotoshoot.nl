@@ -410,11 +410,12 @@ p {
     padding-top: 20px;
     position: relative;
     left: -600px;
+    color: var(--backgroundColor);
 }
 
 .info_container:nth-of-type(3) {
-    background: var(--secundairyColor);
-    color: var(--backgroundColor);
+    background: var(--backgroundColor);
+    color: var(--secundairyColor);
 }
 
 .info_container h1 {
@@ -425,16 +426,24 @@ p {
     text-transform: uppercase;
     font-weight: 900;
     font-size: 42px;
-    color: var(--backgroundColor);
+    /* color: var(--backgroundColor); */
     line-height: .95;
     padding: 20px 20px 0px 20px;
 }
 
 .info_container p {
     padding: 0 0 26px 0;
-    color: var(--backgroundColor);
+    /* color: var(--backgroundColor); */
     padding: 20px 20px;
     margin-bottom: 20px;
+}
+
+.info_prijzen p {
+    display: inline-flex;
+    padding: 0;
+    margin: 0 0 40px 20px;
+    /* font-size: 30px; */
+    border-bottom: 2px solid var(--titleColor);
 }
 
 .info_img {
@@ -468,15 +477,11 @@ p {
     transform: rotate(0deg); /* Reset de rotatie bij hover op de gehele button */
 }
 
-
-
 .subpage_title {
     position: absolute;
     top: 60%;
     text-align: center;
 }
-
-
 
 .call_button .ripple {
 	z-index: 99999;
