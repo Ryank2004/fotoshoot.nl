@@ -203,7 +203,7 @@ p {
 
 .hero_section {
     width: 100%;
-    height: 65vh;
+    height: 70vh;
     padding-top: 100px;
     background-color: var(--backgroundColor);
     display: flex;
