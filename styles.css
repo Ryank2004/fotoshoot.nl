@@ -13,6 +13,7 @@
 @font-face {
     font-family: "BeVietnamProExtraBold";
     src: url("/fonts/Be_Vietnam_Pro/BeVietnamPro-ExtraBold.ttf");
+    font-weight: 700;
 }
 
 :root {
@@ -185,6 +186,7 @@ p {
 
 .menu_item {
     margin: 12px 0;
+    /* font-weight: 500; */
 }
 
 .menu_item a {
