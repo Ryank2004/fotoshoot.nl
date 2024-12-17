@@ -6,13 +6,13 @@
   
 @font-face {
     font-family: "Poppins";
-    src: url("/fonts/Poppins/Poppins-Medium.ttf");
-    font-weight: 700;
+    src: url("./fonts/Poppins/Poppins-Medium.ttf");
+    font-weight: 500;
 }
 
 @font-face {
     font-family: "BeVietnamProExtraBold";
-    src: url("/fonts/Be_Vietnam_Pro/BeVietnamPro-ExtraBold.ttf");
+    src: url("./fonts/Be_Vietnam_Pro/BeVietnamPro-ExtraBold.ttf");
     font-weight: 700;
 }
 
@@ -40,7 +40,7 @@ body {
 p {
     font-size: 18px;
     line-height: 28px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .nav_bar_container {
