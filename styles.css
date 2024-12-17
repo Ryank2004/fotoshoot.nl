@@ -7,7 +7,7 @@
 @font-face {
     font-family: "Poppins";
     src: url("/fonts/Poppins/Poppins-Medium.ttf");
-    font-weight: 400;
+    font-weight: 700;
 }
 
 @font-face {
@@ -40,6 +40,7 @@ body {
 p {
     font-size: 18px;
     line-height: 28px;
+    font-weight: 700;
 }
 
 .nav_bar_container {
@@ -239,7 +240,7 @@ p {
 .hero_text {
     padding: 80px 34px 0 34px;
     color: var(--textColor);
-    font-weight: 400;
+    font-weight: ;
 }
 
 .line_wrapper_title {
