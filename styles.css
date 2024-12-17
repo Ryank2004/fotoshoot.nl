@@ -240,7 +240,6 @@ p {
 .hero_text {
     padding: 80px 34px 0 34px;
     color: var(--textColor);
-    font-weight: ;
 }
 
 .line_wrapper_title {
@@ -579,10 +578,6 @@ footer {
     text-align: center;
 }
 
-footer .title {
-    margin-bottom: 20px;
-}
-
 footer ul {
     padding: 0;
     list-style: none;
@@ -642,6 +637,7 @@ footer .copyright {
     color: #aaa;
     margin-bottom: 0;
 }
+
 /* span.call_button_text{
     font-weight: 600;
 	position: absolute;
