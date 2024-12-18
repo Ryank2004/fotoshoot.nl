@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 end: '50% center',
                 scrub: window.width > 1024 ? 0.8 : false,
                 toggleActions: 'play none play reverse',
-                markers: true,
+                // markers: true,
             }
         });
     });
