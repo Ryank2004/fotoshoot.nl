@@ -69,6 +69,14 @@ p {
     height: 320px;
 }
 
+.nav_bar .menu {
+    pointer-events: none;
+}
+
+.nav_bar.active .menu {
+    pointer-events: all;
+}
+
 .nav_items {
     display: flex;
     min-height: 75px;
@@ -418,7 +426,7 @@ p {
     flex-direction: column;
     padding-top: 20px;
     position: relative;
-    left: -600px;
+    /* left: -600px; */
     color: var(--backgroundColor);
     will-change: transform;
 }
@@ -427,6 +435,8 @@ p {
 .info_container:nth-of-type(5) {
     background: var(--backgroundColor);
     color: var(--secundairyColor);
+    /* left: 0;
+    right: -600px; */
 }
 
 .info_container h1 {

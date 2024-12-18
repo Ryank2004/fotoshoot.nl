@@ -1,6 +1,6 @@
-    function menuBtnFunction(menuBtn) {
+function menuBtnFunction(menuBtn) {
     const navBar = document.querySelector(".nav_bar")
-    const menu =document.querySelector('.menu')
+    const menu = document.querySelector('.menu')
 
     navBar.classList.toggle('active');
     menu.classList.toggle('show');
@@ -8,7 +8,7 @@
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    
+
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
     // This ensures Lenis's smooth scroll animation updates on each GSAP tick
     gsap.ticker.add((time) => {
-    lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+        lenis.raf(time * 1000); // Convert time from seconds to milliseconds
     });
 
     // Disable lag smoothing in GSAP to prevent any delay in scroll animations
@@ -30,21 +30,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Scroll-trigger animaties voor containers
     const containers = gsap.utils.toArray('.info_container');
     containers.forEach(container => {
-        gsap.to(container, { 
-            x: 600,
+        gsap.from(container, {
+            x: -600,
             scrollTrigger: {
                 trigger: container,
                 start: '-30% center',
                 end: '50% center',
-                scrub: 0.8,
-                // markers: true,
+                scrub: window.width > 1024 ? 0.8 : false,
+                toggleActions: 'play none play reverse',
+                markers: true,
             }
         });
     });
 
     // Splits de hero_title in lijnen
     const myTitle = new SplitType('.hero_title', { types: 'lines' });
-    const myText = new SplitType('.hero_text', {types: 'lines'});
+    const myText = new SplitType('.hero_text', { types: 'lines' });
 
     // Voeg wrappers toe rond elke lijn
     myTitle.lines.forEach(line => {
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.fromTo(
         '.line',
         { y: 115 }, // Beginpositie
-        { 
+        {
             y: 0, // Eindpositie
             stagger: 0.1, // Beetje vertraging tussen regels
             delay: 0.1, // Wacht even voordat de animatie start
@@ -74,3 +75,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     );
 });
+
+
+
+let mm = gsap.matchMedia();
+
+mm.add('(prefers-reduced-motion: no-preference)', () => {
+    // gsap functie
+    console.log('no preference')
+})
