@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             x: -600,
             scrollTrigger: {
                 trigger: container,
-                start: '-30% center',
+                start: '-20% center',
                 end: '50% center',
                 scrub: window.width > 1024 ? 0.8 : false,
                 toggleActions: 'play none play reverse',
